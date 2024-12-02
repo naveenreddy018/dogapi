@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+
+    <style>
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            background-color: red;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .searchInput {
+            padding: 20px;
+        }
+
+        .img-container {
+            position: absolute;
+            top: 50%;
+            left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <h2>Search for Items</h2>
+        <form id="searchForm">
+            <input type="text" id="searchInput" class="search-input" placeholder="Enter search term" required>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+       <button id="savedlist" type="button">saved items</button>
+    </div>
+
+    <script>
+        const searchForm = document.getElementById("searchForm")
+
+
+        searchForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const code = e.target[0].value;
+            console.log(code);
+
+
+            divres = document.createElement("div");
+            divres.className = "img-container"
+            divres.style.border = "2px solid red";
+            divres.style.width = "30%";
+            divres.style.objectFit = "cover";
+            document.body.appendChild(divres);
+
+
+            const img = document.createElement("img");
+            img.src = `https://http.dog/${code}.jpg`;
+            img.alt = "Random Dog Image";
+            img.style.width = "50%";
+
+          let getData = JSON.parse(localStorage.getItem("data"))||[];
+
+            const save = document.createElement("button")
+            save.innerHTML = "save"
+            const unsave = document.createElement("button")
+            unsave.innerHTML = "unsave"
+
+
+            save.addEventListener("click", () => {
+                if(!getData.includes(img.src)){
+                    getData.push(img.src)
+                    localStorage.setItem("data",JSON.stringify(getData))
+                    alert("image saved")
+                }
+            })
+
+            unsave.addEventListener("click", () => {
+                getData = getData.filter(image => image !== img.src);
+                localStorage.setItem("data", JSON.stringify(getData));
+                alert("image removed");
+            });
+            divres.append(img, save, unsave)
+        });
+
+
+        const savelist = document.getElementById("savedlist")
+        savelist.addEventListener("click",()=>{
+            window.open("./display.html")
+        })
+    </script>
+</body>
+
+</html>

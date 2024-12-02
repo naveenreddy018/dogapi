@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main_div">
+        <form id="loginForm" class="My-form">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" autocomplete="email" aria-describedby="emailHelp" required>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="current-password" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="button" id="signup_btn" class="btn btn-secondary">Sign Up</button>
+            </div>
+        </form>
+
+        <!-- Hidden Sign-Up Form -->
+        <form id="signupForm" class="My-form" style="display:none;">
+            <div class="mb-3">
+                <label for="signupInputEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="signupInputEmail" autocomplete="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="signupInputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="signupInputPassword" autocomplete="new-password" required>
+            </div>
+            <div class="mb-3">
+                <label for="signupInputConfirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="signupInputConfirmPassword" autocomplete="new-password" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="signupCheck1" required>
+                <label class="form-check-label" for="signupCheck1">I agree to the terms and conditions</label>
+            </div>
+            <div class="btn">
+                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="button" id="backToLogin" class="btn btn-secondary">Back to Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

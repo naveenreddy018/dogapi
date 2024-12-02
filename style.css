@@ -1,0 +1,106 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and font styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container styles */
+.main_div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Heading styles */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form field styles */
+.form-label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.form-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Checkbox styles */
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Button styles */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Button container */
+div {
+    margin-top: 10px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .main_div {
+        padding: 15px;
+    }
+    
+    .form-control {
+        padding: 8px;
+    }
+    
+    .btn {
+        padding: 10px;
+    }
+}
